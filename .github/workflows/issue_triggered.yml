@@ -14,5 +14,5 @@ jobs:
     - name: "Body as JSON"
       shell: pwsh
       run: |
-        $body = "${{ github.event.issue.body }}" | ConvertFrom-Json -AsArray
+        $body = "${{ github.event.issue.body }}" | ConvertTo-Json -AsArray -Compress
         Write-Host $body
