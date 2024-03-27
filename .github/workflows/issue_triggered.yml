@@ -4,8 +4,9 @@ on:
   issues:
     types: [ labeled ]
 jobs:
-  greet:
+  labeled:
+    if: github.event.label.name == "documentation"
     runs-on: ubuntu-latest
     steps:
-    - name: Send greeting
-      run: echo "Hello"
+    - name: Print body
+      run: echo "${{ github.event.issue.body }}"
