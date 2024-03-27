@@ -8,5 +8,5 @@ jobs:
     if: github.event.label.name == 'documentation'
     runs-on: ubuntu-latest
     steps:
-    - name: Print body for issue #${{ github.event.issue.number }}
+    - name: Print body for issue \#${{ github.event.issue.number }}
       run: echo "${{ github.event.issue.body }}"
