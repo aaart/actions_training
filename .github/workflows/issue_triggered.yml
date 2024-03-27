@@ -10,3 +10,9 @@ jobs:
     steps:
     - name: "Print body for issue #${{ github.event.issue.number }}"
       run: echo "${{ github.event.issue.body }}"
+
+    - name: "Body as JSON"
+      shell: pwsh
+      run: |
+        $body = "${{ github.event.issue.body }}" | ConvertFrom-Json -AsArray
+        Write-Host $body
