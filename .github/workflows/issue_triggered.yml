@@ -5,7 +5,7 @@ on:
     types: [ labeled ]
 jobs:
   labeled:
-    if: github.event.label.name == "documentation"
+    if: github.event.label.name == 'documentation'
     runs-on: ubuntu-latest
     steps:
     - name: Print body for issue #${{ github.event.issue.number }}
